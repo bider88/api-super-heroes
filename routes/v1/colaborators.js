@@ -15,13 +15,13 @@ router.get('/:superheroe', (req, res) => {
     arrayMd5 = md5.split(' ');
     const hash = arrayMd5[arrayMd5.length - 1];
 
-    request.get(`${process.env.MARVEL_API}/comics?apikey=${process.env.API_KEY}&ts=${ts}&hash=${hash}`, function (err, body) {
+    request.get(`${process.env.MARVEL_API}/comics?apikey=${process.env.API_KEY}&ts=${ts}&hash=${hash}`, function (err, data) {
 
       if (err) return handleError(res, 500, err);
 
       res.json({
         ok: true,
-        data: body || [],
+        data: JSON.parse(data.body) || [],
         superheroe
       })
     });
