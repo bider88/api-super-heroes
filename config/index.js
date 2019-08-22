@@ -9,8 +9,8 @@ const urlDB = process.env.NODE_ENV === 'dev' ? 'mongodb://localhost:27017/superh
 
 process.env.URLDB = urlDB;
 
-process.env.API_KEY = '50f64c7447802307b0e5f7b2ffe3f378';
+process.env.API_KEY = '50f64c7447802307b0e5f7b2ffe3f378'; // This is my api key (public)
 
-process.env.SECRET_KEY = require('./secret-key');
+process.env.SECRET_KEY = require('./secret-key'); // the file "secret-key.js" must be created and put the private key
 
 process.env.MARVEL_API = 'http://gateway.marvel.com/v1/public';

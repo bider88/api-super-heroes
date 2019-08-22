@@ -11,7 +11,7 @@ router.get('/:superheroe', (req, res) => {
 
   res.json({
     ok: true,
-    data: req.result,
+    data: req.result.results,
     superheroe
   })
 

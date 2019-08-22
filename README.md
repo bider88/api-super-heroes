@@ -23,5 +23,11 @@ npm run dev
 npm start
 ```
 
-### Author
+### Create the `secret-key.js`. Example:
+```
+const secretKey = 'your secret key'
+module.exports = secretKey
+```
+
+#### Author
 [@didiersa](https://twitter.com/didiersa)
