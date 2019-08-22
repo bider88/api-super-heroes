@@ -1,6 +1,7 @@
 const { handleError } = require('../utils/errors');
 const md5 = require("nodejs-md5");
 
+// Middleware that it will get a hash in MD5
 const getMD5 = (req, res, next) => {
   const ts = Math.floor(new Date().getTime() / 1000);
 

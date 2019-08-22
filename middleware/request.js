@@ -2,6 +2,7 @@ const { handleError } = require('../utils/errors');
 const request = require('request');
 const { buildURL, getOffset, getLimit, getTypeRequest } = require('../utils/utils');
 
+// Middleware that it will make a request to marvel api
 const makeRequest = (req, res, next) => {
 
   const offset = getOffset(req);

@@ -12,15 +12,22 @@ const morgan = require('morgan');
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors({origin: 'http://test.albo.mx'}));
+app.use(cors({origin: 'http://test.albo.mx'})); // Right here is enabled cors to http://test.albo.mx
 
 // Settings
 const port = process.env.PORT;
 
 // Routes
 app.use('/api', require('./routes/v1'));
+/*
+    Mainly routes that the user can consult are the next:
+        http://localhost:3000/api/v1/colaborators/${param}
+        http://localhost:3000/api/v1/characters/${param}
 
-// Db connection
+    Example:
+        http://localhost:3000/api/v1/colaborators/spidey
+*/
+
 // Db connection
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
