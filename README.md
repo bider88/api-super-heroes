@@ -8,7 +8,7 @@ This a test to develop an api using marvel's super heroes api
   Example: 
   - http://localhost:3000/api/v1/colaborators/spidey
 
-## Install dependencies:
+## Install dependecies:
 ```
 npm install
 ```
@@ -22,3 +22,6 @@ npm run dev
 ```
 npm start
 ```
+
+### Author
+[@didiersa](https://twitter.com/didiersa)
