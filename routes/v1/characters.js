@@ -1,16 +1,17 @@
 const router = require('express').Router();
+const { getMD5 } = require('../../middleware/converToMD5');
+const { makeRequest } = require('../../middleware/request');
 
-router.get('/characters/:superheroe', (req, res) => {
+router.all('/*', getMD5, makeRequest);
+
+router.get('/:superheroe', (req, res) => {
 
   const { superheroe } = req.params;
 
-  Vacancy.find({experience: superheroe}, (err, postulateDB) => {
-    if (err) return handleError(res, 500, err);
-
-    res.json({
-      ok: true,
-      data: postulateDB || []
-    })
+  res.json({
+    ok: true,
+    data: req.result,
+    superheroe
   })
 
 })
